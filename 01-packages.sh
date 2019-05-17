@@ -16,11 +16,6 @@ apt-get -y install libopenblas-dev
 # install R 3.5
 apt-get -y install r-base r-base-dev
 
-# install RStudio Server
-wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
-gdebi --n rstudio-server-1.1.463-amd64.deb
-rm rstudio-server-1.1.463-amd64.deb
-
 # install devtools and pacman
 R --vanilla << EOF
 if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstudio.com/") }
@@ -38,8 +33,12 @@ pacman::p_load(tidyverse)
 q()
 EOF
 
+# install RStudio Server
+wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
+gdebi --n rstudio-server-1.1.463-amd64.deb
+rm rstudio-server-1.1.463-amd64.deb
+
 # install Shiny Server
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.9.923-amd64.deb
 gdebi --n shiny-server-1.5.9.923-amd64.deb
 rm shiny-server-1.5.9.923-amd64.deb
-
