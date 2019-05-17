@@ -14,7 +14,7 @@ apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texliv
 apt-get -y install libopenblas-dev
 
 # install R 3.5
-apt-get -y install r-base r-base-dev
+apt-get -y install r-base=3.5.3-1bionic r-base-dev=3.5.3-1bionic r-recommended=3.5.3-1bionic
 
 # install devtools and pacman
 R --vanilla << EOF
