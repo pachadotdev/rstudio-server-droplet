@@ -34,6 +34,7 @@ pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown)
 pacman::p_load(RMariaDB, RPostgreSQL)
 pacman::p_load(doParallel)
 pacman::p_load(shiny)
+pacman::p_load(tidyverse)
 q()
 EOF
 
