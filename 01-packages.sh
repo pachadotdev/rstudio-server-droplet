@@ -43,3 +43,6 @@ rm rstudio-server-1.2.5001-amd64.deb
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.12.933-amd64.deb
 gdebi --n shiny-server-1.5.12.933-amd64.deb
 rm shiny-server-1.5.12.933-amd64.deb
+
+# install DO monitoring agent
+curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
