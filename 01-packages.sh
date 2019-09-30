@@ -34,11 +34,11 @@ q()
 EOF
 
 # install RStudio Server
-wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
-gdebi --n rstudio-server-1.1.463-amd64.deb
-rm rstudio-server-1.1.463-amd64.deb
+wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.5001-amd64.deb
+gdebi --n rstudio-server-1.2.5001-amd64.deb
+rm rstudio-server-1.2.5001-amd64.deb
 
 # install Shiny Server
-wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.9.923-amd64.deb
-gdebi --n shiny-server-1.5.9.923-amd64.deb
-rm shiny-server-1.5.9.923-amd64.deb
+wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.12.933-amd64.deb
+gdebi --n shiny-server-1.5.12.933-amd64.deb
+rm shiny-server-1.5.12.933-amd64.deb
