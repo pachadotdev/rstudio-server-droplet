@@ -8,7 +8,7 @@ printf '\n#CRAN mirror\ndeb https://cloud.r-project.org/bin/linux/ubuntu bionic-
 apt-get -y update
 
 # requisites for some R packages
-apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texlive-full pandoc-citeproc libmariadbclient-dev libpq-dev
+apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texlive-full pandoc-citeproc libmariadbclient-dev libpq-dev libv8-dev
 
 # optimized BLAS
 apt-get -y install libopenblas-dev
