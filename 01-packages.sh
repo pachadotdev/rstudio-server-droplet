@@ -25,7 +25,7 @@ pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite)
 pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown)
 pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, chunked)
 pacman::p_load(doParallel)
-pacman::p_load(shiny, shinydashboard, golem)
+pacman::p_load(shiny, shinydashboard, golem, shinyjs, V8)
 pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
 pacman::p_load(forecast, prophet, tsibble, fable)
 pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
