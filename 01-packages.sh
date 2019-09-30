@@ -46,3 +46,10 @@ rm shiny-server-1.5.12.933-amd64.deb
 
 # install DO monitoring agent
 curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
+
+# open ports
+ufw allow http
+ufw allow https
+ufw allow ssh
+ufw allow 8787
+ufw allow 3838
