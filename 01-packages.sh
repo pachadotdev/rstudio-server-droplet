@@ -21,15 +21,16 @@ R --vanilla << EOF
 if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstudio.com/") }
 pacman::p_load(devtools)
 pacman::p_load(packrat, vcr, crul, testthat)
-pacman::p_load(data.table, readr, haven, jsonlite)
-pacman::p_load(dplyr, tidyr, purrr, janitor)
-pacman::p_load(ggplot2)
-pacman::p_load(lubridate)
+pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite)
 pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown)
-pacman::p_load(RMariaDB, RPostgreSQL)
+pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, chunked)
 pacman::p_load(doParallel)
-pacman::p_load(shiny)
-pacman::p_load(tidyverse)
+pacman::p_load(shiny, shinydashboard, golem)
+pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
+pacman::p_load(forecast, prophet, tsibble, fable)
+pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
+glmnet, ROCR, pROC, gbm, party, arules, tree, klaR, RWeka, ipred, lars, earth, CORElearn,
+mboost, mlr)
 q()
 EOF
 
