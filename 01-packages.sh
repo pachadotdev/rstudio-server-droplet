@@ -20,7 +20,7 @@ apt-get -y install r-base r-base-dev
 R --vanilla << EOF
 if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstudio.com/") }
 pacman::p_load(devtools)
-pacman::p_load(packrat, vcr, crul, testthat)
+pacman::p_load(packrat, vcr, crul, testthat, usethis)
 pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite)
 pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan)
 pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
