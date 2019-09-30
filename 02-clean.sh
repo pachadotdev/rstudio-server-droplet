@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get -y update
 apt-get -y upgrade
-rm -rf /tmp/* /var/tmp/*
+rm -rf /tmp/* /var/tmp/* /var/log/* /root/.ssh/
 history -c
 cat /dev/null > /root/.bash_history
 unset HISTFILE
@@ -13,4 +13,4 @@ rm -rf /var/lib/cloud/instances/*
 #rm -f /root/.ssh/authorized_keys /etc/ssh/*key*
 dd if=/dev/zero of=/zerofile; sync; rm /zerofile; sync
 cat /dev/null > /var/log/lastlog; cat /dev/null > /var/log/wtmp
-
+passwd -l root
