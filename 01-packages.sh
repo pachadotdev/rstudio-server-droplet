@@ -12,13 +12,13 @@ apt-get -y upgrade
 apt-get -y install gdebi-core
 
 # requisites for R packages
-apt-get -y install libxml2-dev libssl-dev libcurl4-openssl-dev libudunits2-dev gdal-bin libgdal-dev libproj-dev libv8-dev
+apt-get -y install libxml2-dev libssl-dev libcurl4-openssl-dev libudunits2-dev gdal-bin libgdal-dev libproj-dev libv8-dev default-jdk
 
 # requisites for Markdown
 apt-get -y install texlive-full pandoc-citeproc
 
 # requisites for DB connectors
-apt-get -y instal libmysqlclient-dev libpq-dev
+apt-get -y install libmysqlclient-dev libpq-dev
 
 # install optimized BLAS
 apt-get -y install libopenblas-dev
@@ -36,7 +36,7 @@ if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstud
 pacman::p_load(devtools, packrat, vcr, crul, testthat, usethis)
 
 # general
-pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite, here, fs)
+pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite, readxl, openxlsx, here, fs)
 
 # documentation
 pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan, Rdpack)
