@@ -32,33 +32,116 @@ curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
 # install R packages
 R --vanilla << EOF
 # development
-if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstudio.com/") }
-pacman::p_load(devtools, packrat, vcr, crul, testthat, usethis)
+install.packages("devtools")
+install.packages("packrat")
+install.packages("vcr")
+install.packages("crul")
+install.packages("testthat")
+install.packages("usethis")
 
 # general
-pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite, readxl, openxlsx, here, fs)
+install.packages("data.table")
+install.packages("tidyverse")
+install.packages("lubridate")
+install.packages("janitor")
+install.packages("haven")
+install.packages("readxl")
+install.packages("openxlsx")
+install.packages("here")
+install.packages("fs")
 
 # documentation
-pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan, Rdpack)
+install.packages("roxygen2")
+install.packages("rmarkdown")
+install.packages("bookdown")
+install.packages("pkgdown")
+install.packages("xaringan")
+install.packages("Rdpack")
 
 # databases
-pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
+install.packages("DBI")
+install.packages("dbplyr")
+install.packages("RMariaDB")
+install.packages("RPostgreSQL")
+install.packages("glue")
+install.packages("chunked")
 
 # paralelization
-pacman::p_load(doParallel)
-
-# visualization
-pacman::p_load(corrplot, lattice, shiny, shinydashboard, golem, shinyjs, V8, highcharter, plotly, ggvis, DT)
+install.packages("doParallel")
 
 # statistics
-pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan, broom, modelr,
-forecast, prophet, tsibble, fable, tidymodels,
-h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret,
-kernlab, glmnet, ROCR, pROC, gbm, party, arules, tree, klaR,
-RWeka, ipred, lars, earth, CORElearn, mboost, mlr)
+install.packages("lme4")
+install.packages("glm2")
+install.packages("lmtest")
+install.packages("MASS")
+install.packages("censReg")
+install.packages("multiwayvcov")
+install.packages("rstan")
+install.packages("broom")
+install.packages("modelr")
+install.packages("forecast")
+install.packages("prophet")
+install.packages("tsibble")
+install.packages("fable")
+install.packages("tidymodels")
+install.packages("h2o")
+install.packages("e1071")
+install.packages("rpart")
+install.packages("nnet")
+install.packages("randomForest")
+install.packages("caret")
+install.packages("kernlab")
+install.packages("glmnet")
+install.packages("ROCR")
+install.packages("pROC")
+install.packages("gbm")
+install.packages("party")
+install.packages("arules")
+install.packages("tree")
+install.packages("klaR")
+install.packages("RWeka")
+install.packages("lars")
+install.packages("earth")
+install.packages("CORElearn")
+install.packages("mboost")
+install.packages("mlr")
 
 # maps
-pacman::p_load(sf, spData, tmap, cartography)
+install.packages("sf")
+install.packages("spData")
+install.packages("tmap")
+install.packages("cartography")
+
+# visualization
+install.packages("corrplot")
+install.packages("lattice")
+install.packages("shiny")
+install.packages("shinydashboard")
+install.packages("golem")
+install.packages("shinyjs")
+install.packages("V8")
+install.packages("highcharter")
+install.packages("plotly")
+install.packages("ggvis")
+install.packages("DT")
+install.packages("shinyWidgets")
+install.packages("shinydashboardPlus")
+install.packages("bsplus")
+install.packages("plotly")
+install.packages("shinyML")
+
+# networks
+install.packages("igraph")
+install.packages("ggraph")
+install.packages("tidygraph")
+install.packages("visNetwork")
+install.packages("network")
+install.packages("networkDynamic")
+install.packages("ndtv")
+install.packages("intergraph")
+install.packages("igraphdata")
+install.packages("qgraph")
+
 q()
 EOF
 
