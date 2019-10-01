@@ -6,33 +6,59 @@ printf '\n#CRAN mirror\ndeb https://cloud.r-project.org/bin/linux/ubuntu bionic-
 
 # update apt
 apt-get -y update
+apt-get -y upgrade
 
-# requisites for some R packages
-apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texlive-full pandoc-citeproc libmysqlclient-dev libpq-dev libudunits2-dev gdal-bin libgdal-dev libproj-dev libv8-dev
+# requisites for RStudio
+apt-get -y install gdebi-core
 
-# optimized BLAS
+# requisites for R packages
+apt-get -y install libxml2-dev libssl-dev libcurl4-openssl-dev libudunits2-dev gdal-bin libgdal-dev libproj-dev libv8-dev
+
+# requisites for Markdown
+apt-get -y install texlive-full pandoc-citeproc
+
+# requisites for DB connectors
+apt-get -y instal libmysqlclient-dev libpq-dev
+
+# install optimized BLAS
 apt-get -y install libopenblas-dev
 
-# install R 3.5
+# install R
 apt-get -y install r-base r-base-dev
 
-# install devtools and pacman
+# install Digital Ocean agent
+curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
+
+# install R packages
 R --vanilla << EOF
+# development
 if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstudio.com/") }
-pacman::p_load(devtools)
-pacman::p_load(packrat, vcr, crul, testthat, usethis)
-pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite)
+pacman::p_load(devtools, packrat, vcr, crul, testthat, usethis)
+
+# general
+pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite, here, fs)
+
+# documentation
 pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan, Rdpack)
+
+# databases
 pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
+
+# paralelization
 pacman::p_load(doParallel)
-pacman::p_load(shiny, shinydashboard, golem, shinyjs, V8)
-pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
-pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan, broom, modelr)
-pacman::p_load(forecast, prophet, tsibble, fable, tidymodels)
-pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
-glmnet, ROCR, pROC, gbm, party, arules, tree, klaR, RWeka, ipred, lars, earth, CORElearn,
-mboost, mlr)
-pacman::p_load(sf, spData, here, tmap, cartography)
+
+# visualization
+pacman::p_load(corrplot, lattice, shiny, shinydashboard, golem, shinyjs, V8, highcharter, plotly, ggvis, DT)
+
+# statistics
+pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan, broom, modelr,
+forecast, prophet, tsibble, fable, tidymodels,
+h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret,
+kernlab, glmnet, ROCR, pROC, gbm, party, arules, tree, klaR,
+RWeka, ipred, lars, earth, CORElearn, mboost, mlr)
+
+# maps
+pacman::p_load(sf, spData, tmap, cartography)
 q()
 EOF
 
@@ -45,9 +71,6 @@ rm rstudio-server-1.2.5001-amd64.deb
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.12.933-amd64.deb
 gdebi --n shiny-server-1.5.12.933-amd64.deb
 rm shiny-server-1.5.12.933-amd64.deb
-
-# install DO cloud init
-curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
 
 # open ports
 ufw allow http
