@@ -8,7 +8,7 @@ printf '\n#CRAN mirror\ndeb https://cloud.r-project.org/bin/linux/ubuntu bionic-
 apt-get -y update
 
 # requisites for some R packages
-apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texlive-full pandoc-citeproc libmariadbclient-dev libpq-dev libv8-dev
+apt-get -y install gdebi-core libxml2-dev libssl-dev libcurl4-openssl-dev texlive-full pandoc-citeproc libmysqlclient-dev libpq-dev libudunits2-dev gdal-bin libgdal-dev libproj-dev libv8-dev
 
 # optimized BLAS
 apt-get -y install libopenblas-dev
@@ -27,11 +27,12 @@ pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
 pacman::p_load(doParallel)
 pacman::p_load(shiny, shinydashboard, golem, shinyjs, V8)
 pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
-pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan)
+pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan, broom, modelr)
 pacman::p_load(forecast, prophet, tsibble, fable, tidymodels)
 pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
 glmnet, ROCR, pROC, gbm, party, arules, tree, klaR, RWeka, ipred, lars, earth, CORElearn,
 mboost, mlr)
+pacman::p_load(sf, spData, here, tmap, cartography)
 q()
 EOF
 
