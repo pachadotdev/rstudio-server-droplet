@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Add a swap file to prevent build time OOM errors
+fallocate -l 4G /swapfile
+mkswap /swapfile
+swapon /swapfile
+
 # add CRAN to apt sources
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 printf '\n#CRAN mirror\ndeb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/\n' | sudo tee -a /etc/apt/sources.list
@@ -161,3 +166,7 @@ ufw allow https
 ufw allow ssh
 ufw allow 8787
 ufw allow 3838
+
+# Disable and remove the swapfile prior to snapshotting
+swapoff /swapfile
+rm -f /swapfile
