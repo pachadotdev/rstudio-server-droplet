@@ -27,7 +27,7 @@ pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
 pacman::p_load(doParallel)
 pacman::p_load(shiny, shinydashboard, golem, shinyjs, V8)
 pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
-pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov)
+pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov, rstan)
 pacman::p_load(forecast, prophet, tsibble, fable, tidymodels)
 pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
 glmnet, ROCR, pROC, gbm, party, arules, tree, klaR, RWeka, ipred, lars, earth, CORElearn,
