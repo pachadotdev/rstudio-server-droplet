@@ -22,11 +22,12 @@ if (!require("pacman")) { install.packages("pacman", repos = "https://cran.rstud
 pacman::p_load(devtools)
 pacman::p_load(packrat, vcr, crul, testthat, usethis)
 pacman::p_load(data.table, tidyverse, lubridate, janitor, haven, jsonlite)
-pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan)
+pacman::p_load(roxygen2, rmarkdown, bookdown, pkgdown, xaringan, Rdpack)
 pacman::p_load(DBI, dbplyr, RMariaDB, RPostgreSQL, glue, chunked)
 pacman::p_load(doParallel)
 pacman::p_load(shiny, shinydashboard, golem, shinyjs, V8)
 pacman::p_load(corrplot, lattice, highcharter, plotly, ggvis, DT)
+pacman::p_load(lme4, glm2, lmtest, MASS, censReg, survival, multiwayvcov)
 pacman::p_load(forecast, prophet, tsibble, fable, tidymodels)
 pacman::p_load(h2o, shinyML, e1071, rpart, igraph, nnet, randomForest, caret, kernlab,
 glmnet, ROCR, pROC, gbm, party, arules, tree, klaR, RWeka, ipred, lars, earth, CORElearn,
