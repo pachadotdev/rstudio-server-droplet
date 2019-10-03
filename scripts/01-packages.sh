@@ -83,6 +83,7 @@ pacman::p_install(chunked, force = FALSE)
 pacman::p_install(doParallel, force = FALSE)
 
 # statistics
+pacman::p_install(survey, force = FALSE)
 pacman::p_install(lme4, force = FALSE)
 pacman::p_install(glm2, force = FALSE)
 pacman::p_install(lmtest, force = FALSE)
