@@ -6,8 +6,11 @@ myip=$(hostname -I | awk '{print$1}')
 cat <<EOF
 ********************************************************************************
 
-Please visit https://marketplace.digitalocean.com/apps/rstudio
-for instructions on how to use and administer this droplet.
+Please read the instructions at
+https://marketplace.digitalocean.com/apps/rstudio
+
+If you have questions, please send me a tweet. My Twitter username
+is @pachamaltese.
 
 ********************************************************************************
 To delete this message of the day: rm -rf $(readlink -f ${0})
